@@ -1,0 +1,47 @@
+{
+  "name": "@opt-tech/renovate-config",
+  "scripts": {
+    "fix": "npm run lint:prettier -- --write",
+    "lint": "run-p lint:*",
+    "lint:prettier": "prettier -l \"**/*.{js,json,md,yaml,yml}\"",
+    "lint:renovate": "renovate-config-validator",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.0.5",
+    "prettier-plugin-packagejson": "2.2.5",
+    "renovate": "21.21.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "renovate-config": {
+    "default": {
+      "extends": [
+        "config:base",
+        ":unpublishSafe",
+        ":automergePatch",
+        ":automergeBranch",
+        ":maintainLockFilesWeekly",
+        ":timezone(Asia/Tokyo)",
+        ":disableRateLimiting",
+        ":prNotPending",
+        ":rebaseStalePrs",
+        ":label(renovate)"
+      ],
+      "packageRules": [
+        {
+          "depTypeList": [
+            "devDependencies"
+          ],
+          "extends": [
+            ":automergeMinor"
+          ]
+        }
+      ]
+    }
+  }
+}
