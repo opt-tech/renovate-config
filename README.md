@@ -19,6 +19,5 @@
   - circleci orbs
 - rebase stale prs
 - maintain lock files weekly
-- [SemVer stability score](https://dependabot.com/compatibility-score.html/) badge from [Dependabot](https://dependabot.com/)
 
 The renovate config presets are stored in [renovate.json](renovate.json).
