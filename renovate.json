@@ -16,11 +16,7 @@
         "depTypeList": ["devDependencies"],
         "extends": [":automergeMinor"]
       }
-    ],
-    "prBodyDefinitions": {
-      "Stability": "[![compatibility score for {{{depName}}}](https://api.dependabot.com/badges/compatibility_score/?dependency-name={{{depName}}}&package-manager=npm_and_yarn&previous-version={{{fromVersion}}}&new-version={{{toVersion}}})](https://dependabot.com/compatibility-score/?dependency-name={{{depName}}}&package-manager=npm_and_yarn&previous-version={{{fromVersion}}}&new-version={{{toVersion}}}) [![SemVer stability score for {{{depName}}}](https://api.dependabot.com/badges/compatibility_score/?dependency-name={{{depName}}}&package-manager=npm_and_yarn&version-scheme=semver)](https://dependabot.com/compatibility-score/?dependency-name={{{depName}}}&package-manager=npm_and_yarn)"
-    },
-    "prBodyColumns": ["Package", "Type", "Update", "Change", "Stability"]
+    ]
   },
   "circleci": {
     "extends": [":automergeMinor"]
