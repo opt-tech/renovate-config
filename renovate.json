@@ -10,11 +10,11 @@
     ":label(dependencies)"
   ],
   "npm": {
-    "extends": [":unpublishSafe", ":pinAllExceptPeerDependencies", ":maintainLockFilesWeekly"],
+    "extends": ["npm:unpublishSafe", ":pinAllExceptPeerDependencies", ":maintainLockFilesWeekly"],
     "packageRules": [
       {
-        "depTypeList": ["devDependencies"],
-        "extends": [":automergeMinor"]
+        "extends": [":automergeMinor"],
+        "matchDepTypes": ["devDependencies"]
       }
     ]
   },
