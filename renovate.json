@@ -1,4 +1,10 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "circleci": {
+    "extends": [
+      ":automergeMinor"
+    ]
+  },
   "extends": [
     "config:base",
     ":automergePatch",
@@ -6,19 +12,22 @@
     ":timezone(Asia/Tokyo)",
     ":disableRateLimiting",
     ":prNotPending",
-    ":rebaseStalePrs",
-    ":label(dependencies)"
+    ":labels(dependencies, renovate)"
   ],
   "npm": {
-    "extends": ["npm:unpublishSafe", ":pinAllExceptPeerDependencies", ":maintainLockFilesWeekly"],
-    "packageRules": [
-      {
-        "extends": [":automergeMinor"],
-        "matchDepTypes": ["devDependencies"]
-      }
-    ]
+    "extends": [
+      "npm:unpublishSafe",
+      ":pinAllExceptPeerDependencies",
+      ":maintainLockFilesWeekly"
+    ],
+    "packageRules": [{
+      "extends": [
+        ":automergeMinor"
+      ],
+      "matchDepTypes": [
+        "devDependencies"
+      ]
+    }]
   },
-  "circleci": {
-    "extends": [":automergeMinor"]
-  }
+  "rebaseWhen": "conflicted"
 }
